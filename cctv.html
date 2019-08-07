@@ -1,0 +1,114 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>CCTV7改版多屏放送文化</title> 
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.7, minimum-scale=0.7, maximum-scale=0.7, user-scalable=no" >  
+
+<style type="text/css">
+body,html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	color: #eee;
+	font-family: Arial;
+	background-color: #222;
+}
+ 
+.layout {
+	float: left;
+	height: 50%;
+	width: 50%;
+	background: #222;
+}
+
+.title {
+color: #F15050;
+margin-top:-20px;
+margin-bottom:-10px;
+text-shadow: 4px 4px 5px #FD0404;
+text-align: center;
+}
+
+.right {
+text-align: right;
+color: #eee;
+font-size:85%;
+}
+</style>
+ <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+ <script type="text/javascript">
+
+
+//定义函数：构建要显示的时间日期字符串
+function showTime()
+{
+ //创建Date对象
+ var today = new Date();
+ //分别取出年、月、日、时、分、秒
+ var year = today.getFullYear();
+ var month = today.getMonth()+1;
+ var day = today.getDate();
+ var hours = today.getHours();
+ var minutes = today.getMinutes();
+ var seconds = today.getSeconds();
+ //如果是单个数，则前面补0
+ month  = month<10  ? "0"+month : month;
+ day  = day <10  ? "0"+day : day;
+ hours  = hours<10  ? "0"+hours : hours;
+ minutes = minutes<10 ? "0"+minutes : minutes;
+ seconds = seconds<10 ? "0"+seconds : seconds;
+ 
+ //构建要输出的字符串
+ var str = year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds;
+ 
+ //获取id=result的对象
+ var obj = document.getElementById("result");
+ //将str的内容写入到id=result的<div>中去
+ obj.innerHTML = str;
+ //延时器
+ window.setTimeout("showTime()",1000);
+}
+</script>
+
+</head> 
+
+<body onload="showTime()">
+<div id="result"></div>
+<div class="title" >
+
+     <h1>安 全 播 出 大 于 天</h1>
+</div>
+<div class="right" >
+     提示：电脑上请使用Edge浏览器打开，其他浏览器无法播放。
+	 <image height="20px" src="./bug.png"/>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+<div style="border: 2px red solid; margin: 0px; padding: 0px; height: 85%; width: 99%;">
+		<div id="left_top" class="layout">
+			<div id="Applet1"	style="border: 1px #777 solid; margin: 2px; padding: 2px; height: 97%; text-align:center; ">		
+      <video width="100%" height="94%" autoplay controls >    
+         <source type="application/x-mpegurl" src="https://ptv.uwp.ac.cn/hellotvhls/cctv7hd.m3u8">
+      </video>	<strong>CCTV7国防军事 - 末级 HD 主</strong></div>
+		</div>
+		<div id="right_top" class="layout">
+				<div id="Applet2"	style="border: 1px #777 solid; margin: 2px; padding: 2px; height: 97%; text-align:center;">		
+      <video width="100%" height="94%" autoplay controls >    
+         <source type="application/x-mpegurl" src="https://ptv.uwp.ac.cn/hellotvhls/cctv71hd.m3u8">
+      </video>	<strong>CCTV17农业农村 - 末级 HD 主</strong></div>
+		</div>
+		<div id="left_bottom" class="layout">
+				<div id="Applet3"	style="border: 1px #777 solid; margin: 2px; padding: 2px; height: 97%; text-align:center;">		
+      <video width="100%" height="94%" autoplay controls >    
+         <source type="application/x-mpegurl" src="https://ptv.uwp.ac.cn/hellotvhls/cctv7.m3u8">
+      </video>	<strong>CCTV7国防军事 - 末级 SD 主</strong></div>
+		</div>
+		<div id="right_bottom" class="layout">
+				<div id="Applet4"	style="border: 1px #777 solid; margin: 2px; padding: 2px; height: 97%; text-align:center;">		
+      <video width="100%" height="94%" autoplay controls >    
+         <source type="application/x-mpegurl" src="https://ptv.uwp.ac.cn/hellotvhls/gfjs.m3u8">
+      </video>	<strong>CCTV兵器科技付费 - 末级 SD 主</strong></div>
+		</div>
+	</div>
+</body> 
